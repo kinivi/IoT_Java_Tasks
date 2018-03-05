@@ -4,12 +4,12 @@ public class Gem extends Stone {
 
     private final String gemName;
 
-    public Gem(final double price, final double weight, final int clarity, final String type) {
+    public Gem(final double price, final double weight, final Clarity clarity, final String type) {
         super(price, weight, clarity, type);
         gemName = "none";
     }
 
-    public Gem(final double price, final double weight, final int clarity, final String type, final String gemName) {
+    public Gem(final double price, final double weight, final Clarity clarity, final String type, final String gemName) {
         super(price, weight, clarity, type);
         if (gemName != null) {
             this.gemName = gemName;

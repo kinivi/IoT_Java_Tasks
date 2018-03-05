@@ -2,12 +2,12 @@ package ua.iot.lviv;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assumptions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assumptions.assumingThat;
 
 class NecklaceTest {
 
@@ -19,8 +19,8 @@ class NecklaceTest {
 
     @BeforeEach
     void setUP() {
-        SemiPreciousStone semiPreciousStone = new SemiPreciousStone(20, 20, 3, "криптоніт", 1);
-        Gem gem = new Gem(30, 30, 1, "Алмаз");
+        SemiPreciousStone semiPreciousStone = new SemiPreciousStone(20, 20, Clarity.THIRD, "криптоніт", 1);
+        Gem gem = new Gem(30, 30, Clarity.FIRST, "Алмаз");
 
         gemArrayList = new ArrayList<>();
         semiPreciousStoneArrayList = new ArrayList<>();
@@ -51,8 +51,10 @@ class NecklaceTest {
 
     @Test
     void findStone() {
-        assumingThat(necklace != null, () -> assertEquals(30, necklace.findStone(1).getPrice()));
-        assumingThat(necklace != null, () -> assertEquals(20, necklace.findStone(3).getPrice()));
-        assumingThat(necklace != null, () -> assertNull(necklace.findStone(10)));
+        assumingThat(necklace != null, () -> assertEquals(30, necklace.findStone(Clarity.FIRST).getPrice()));
+        assumingThat(necklace != null, () -> assertEquals(20, necklace.findStone(Clarity.THIRD).getPrice()));
+        assumingThat(necklace != null, () -> assertNull(necklace.findStone(Clarity.FIFTH)));
     }
+
+
 }

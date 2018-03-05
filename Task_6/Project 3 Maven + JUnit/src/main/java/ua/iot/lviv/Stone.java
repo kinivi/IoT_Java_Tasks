@@ -3,10 +3,10 @@ package ua.iot.lviv;
 public abstract class Stone {
     private final double price;
     private final double weight; // in carats
-    private final int clarity;
+    private final Clarity clarity;
     private String type;
 
-    public Stone(final double price, final double weight, final int clarity, final String type) {
+    public Stone(final double price, final double weight, final Clarity clarity, final String type) {
         this.price = price;
         this.weight = weight;
         this.clarity = clarity;
@@ -29,7 +29,7 @@ public abstract class Stone {
         return weight;
     }
 
-    public final int getClarity() {
+    public final Clarity getClarity() {
         return clarity;
     }
 }

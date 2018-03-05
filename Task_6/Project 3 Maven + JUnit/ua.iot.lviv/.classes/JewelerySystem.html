@@ -1,0 +1,133 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: JewelerySystem</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">ua.iot.lviv</a> ]
+</div>
+
+<h1>Coverage Summary for Class: JewelerySystem (ua.iot.lviv)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">JewelerySystem</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/ 12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package ua.iot.lviv;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.LinkedList;
+<i>4</i>&nbsp;import java.util.List;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;public class JewelerySystem {
+<i>7</i>&nbsp;    private List&lt;Gem&gt; availableGems;
+<i>8</i>&nbsp;    private List&lt;SemiPreciousStone&gt; availableSemiPreciousStones;
+<b class="fc"><i>9</i>&nbsp;    private static List&lt;Necklace&gt; necklaces = new LinkedList&lt;&gt;();</b>
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;
+<b class="fc"><i>12</i>&nbsp;    public JewelerySystem(final List&lt;Gem&gt; availableGems, final List&lt;SemiPreciousStone&gt; availableSemiPreciousStones) {</b>
+<b class="fc"><i>13</i>&nbsp;        this.availableGems = availableGems;</b>
+<b class="fc"><i>14</i>&nbsp;        this.availableSemiPreciousStones = availableSemiPreciousStones;</b>
+<b class="fc"><i>15</i>&nbsp;    }</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    public final List&lt;Gem&gt; getAvailableGems() {
+<b class="fc"><i>18</i>&nbsp;        return availableGems;</b>
+<i>19</i>&nbsp;    }
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    public final List&lt;SemiPreciousStone&gt; getAvailableSemiPreciousStones() {
+<b class="fc"><i>22</i>&nbsp;        return availableSemiPreciousStones;</b>
+<i>23</i>&nbsp;    }
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    public static List&lt;Necklace&gt; getNecklaces() {
+<b class="fc"><i>26</i>&nbsp;        return necklaces;</b>
+<i>27</i>&nbsp;    }
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;//    public final void addAvailableGems(final List&lt;Gem&gt; availableGems) {
+<i>30</i>&nbsp;//        this.availableGems.addAll(availableGems);
+<i>31</i>&nbsp;//    }
+<i>32</i>&nbsp;//
+<i>33</i>&nbsp;//    public final void addAvailableGems(final Gem availableGem) {
+<i>34</i>&nbsp;//        this.availableGems.add(availableGem);
+<i>35</i>&nbsp;//    }
+<i>36</i>&nbsp;//
+<i>37</i>&nbsp;//    public final void addAvailableSemiPreciousStones(SemiPreciousStone availableSemiPreciousStone) {
+<i>38</i>&nbsp;//        this.availableSemiPreciousStones.add(availableSemiPreciousStone);
+<i>39</i>&nbsp;//    }
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;    public Necklace createNecklace(final List&lt;Gem&gt; necklaceGems, final List&lt;SemiPreciousStone&gt; necklaceSemiPreciousStones) {
+<b class="fc"><i>42</i>&nbsp;        Necklace necklace = new Necklace(necklaceGems, necklaceSemiPreciousStones);</b>
+<b class="fc"><i>43</i>&nbsp;        necklaces.add(necklace);</b>
+<b class="fc"><i>44</i>&nbsp;        return necklace;</b>
+<i>45</i>&nbsp;    }
+<i>46</i>&nbsp;
+<i>47</i>&nbsp;    public boolean removeNecklace(Necklace necklace) {
+<b class="fc"><i>48</i>&nbsp;        return necklaces.remove(necklace);</b>
+<i>49</i>&nbsp;    }
+<i>50</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-03-05 19:57</div>
+</div>
+</body>
+</html>

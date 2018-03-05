@@ -1,14 +1,15 @@
 package ua.iot.lviv;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Necklace {
     private double price = 0.0;
-    private ArrayList<Gem> gemsInNecklace;
-    private ArrayList<SemiPreciousStone> semiPreciousStonesInNecklace;
+    private List<Gem> gemsInNecklace;
+    private List<SemiPreciousStone> semiPreciousStonesInNecklace;
     private double weightInCarats = 0;
 
-    public Necklace(final ArrayList<Gem> gemsInNecklace, final ArrayList<SemiPreciousStone> semiPreciousStonesInNecklace) {
+    public Necklace(final List<Gem> gemsInNecklace, final List<SemiPreciousStone> semiPreciousStonesInNecklace) {
 
         this.gemsInNecklace = gemsInNecklace;
         this.semiPreciousStonesInNecklace = semiPreciousStonesInNecklace;
@@ -30,8 +31,8 @@ public class Necklace {
         return weightInCarats;
     }
 
-    public ArrayList<Stone> getSortedInPriceStones() {
-        ArrayList<Stone> stones = new ArrayList<>();
+    public List<Stone> getSortedInPriceStones() {
+        List<Stone> stones = new LinkedList<>();
         stones.addAll(gemsInNecklace);
         stones.addAll(semiPreciousStonesInNecklace);
 
@@ -48,8 +49,8 @@ public class Necklace {
         return stones;
     }
 
-    public Stone findStone(final int clarity) {
-        ArrayList<Stone> stones = new ArrayList<>();
+    public Stone findStone(final Clarity clarity) {
+        List<Stone> stones = new LinkedList<>();
         stones.addAll(gemsInNecklace);
         stones.addAll(semiPreciousStonesInNecklace);
 

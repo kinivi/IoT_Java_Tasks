@@ -1,11 +1,9 @@
 package ua.iot.lviv;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.function.BooleanSupplier;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,8 +18,8 @@ class JewelerySystemTest {
 
     @BeforeEach
     void setUp() {
-        semiPreciousStone = new SemiPreciousStone(20, 20, 3, "криптоніт", 1);
-        gem = new Gem(20, 30, 1, "Алмаз");
+        semiPreciousStone = new SemiPreciousStone(20, 20, Clarity.THIRD, "криптоніт", 1);
+        gem = new Gem(20, 30, Clarity.FIRST, "Алмаз");
 
         gemArrayList = new ArrayList<>();
         semiPreciousStoneArrayList = new ArrayList<>();
@@ -49,7 +47,7 @@ class JewelerySystemTest {
     void getNecklaces() {
         necklace = jewelerySystem.createNecklace(gemArrayList, semiPreciousStoneArrayList);
         assertNotNull(JewelerySystem.getNecklaces());
-        assertEquals(20, JewelerySystem.getNecklaces().get(0).findStone(1).getPrice());
+        assertEquals(20, JewelerySystem.getNecklaces().get(0).findStone(Clarity.FIRST).getPrice());
     }
 
     @Test

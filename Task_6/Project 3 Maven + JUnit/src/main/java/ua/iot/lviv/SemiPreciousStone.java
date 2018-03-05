@@ -4,7 +4,7 @@ public class SemiPreciousStone extends Stone {
 
     private final int stoneClass;
 
-    public SemiPreciousStone(final double price, final double weight, final int clarity,
+    public SemiPreciousStone(final double price, final double weight, final Clarity clarity,
                              final String type, final int stoneClass) {
         super(price, weight, clarity, type);
         this.stoneClass = stoneClass;
